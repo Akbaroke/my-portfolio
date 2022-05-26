@@ -133,7 +133,6 @@ function scrollFunction() {
     }
 }
 
-
 $(".scroll-to-top").hover(
 	function () {
 		$(".Back-to-Top").css("display", "block");
@@ -142,3 +141,10 @@ $(".scroll-to-top").hover(
 		$(".Back-to-Top").css("display", "none");
 	}
 );
+
+
+// Preload
+let loader = document.getElementById("preload");
+window.addEventListener("load", function(){
+	loader.style.display = "none";
+})
