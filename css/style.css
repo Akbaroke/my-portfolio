@@ -1381,6 +1381,27 @@ textarea.input {
 .destalert5:hover{
 	transform: rotate(180deg);
 }
+@media only screen and (max-width: 407px){
+	.alert,
+	.alert-failed1,
+	.alert-failed2,
+	.alert-failed3,
+	.alert-failed4,
+	.alert-failed5{
+		width: 200px;
+		left: 115px;
+		bottom: 20px;
+		padding: 0.6rem 0.8rem;
+	}
+	.destalert,
+	.destalert1,
+	.destalert2,
+	.destalert3,
+	.destalert4,
+	.destalert5{
+		left: 179px;
+	}
+}
 
 
 /* Scroll to top Button */
@@ -1401,6 +1422,15 @@ textarea.input {
     border-radius: 30px;
     font-size: 18px;
 }
+@media only screen and (max-width: 414px){
+	.scroll-to-top{
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		padding-bottom: -1px;
+	}
+}
+
 
 /* Footer Section */
 footer {
@@ -1555,6 +1585,7 @@ footer i {
 .loadingcss {
 	position: relative;
 	margin: auto;
+	bottom: 2.5px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
