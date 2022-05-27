@@ -147,4 +147,5 @@ $(".scroll-to-top").hover(
 let loader = document.getElementById("preload");
 window.addEventListener("load", function(){
 	loader.style.display = "none";
+	$('html').removeClass('hidden');
 })
