@@ -1336,10 +1336,18 @@ footer i {
 /* Preload */
 #preload{
 	display: flex;
+	z-index: 999999999999999;
 	justify-content: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
 	align-items: center;
 	min-height: 100vh;
-	background: var(--greycolor);
+	background: #adadad9a;
+	overflow: hidden;
 }
 .isi{
 	position: relative;
