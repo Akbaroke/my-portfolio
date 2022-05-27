@@ -15,10 +15,12 @@
 html {
 	scroll-behavior: smooth;
 	overflow-x: hidden;
+	background: var(--blackcolor);
 }
 body {
 	color: transparent;
 	font-family: 'Poppins', sans-serif;
+	overflow-x: hidden;
 }
 a {
 	text-decoration: none;
@@ -50,13 +52,10 @@ header {
 ::-webkit-scrollbar-thumb:hover {
     background: #717171;
 }
-@media (max-width: 667px) {
-	.header-title{
-		font-size: 20px;
-	}
-	.header-foto {
-		width: 150px;
-		height: 150px;
+@media (max-width: 425px) {
+	::-webkit-scrollbar-track {
+		background: var(--blackcolor);
+		width: 2px;
 	}
 }
 
@@ -323,6 +322,15 @@ header::before {
 	position: relative;
 	font-weight: 700;
 	color: var(--whitecolor);
+}
+@media (max-width: 667px) {
+	.header-title{
+		font-size: 20px;
+	}
+	.header-foto {
+		width: 150px;
+		height: 150px;
+	}
 }
 
 
@@ -1332,6 +1340,15 @@ footer i {
 		flex-direction: column;
 	}
 }
+@media only screen and (max-width: 425px){
+	footer {
+		font-size: 12px;
+		padding: 1.5rem 3rem;
+	}
+	html{
+		overflow-x: hidden;
+	}
+}
 
 /* Preload */
 #preload{
@@ -1346,7 +1363,7 @@ footer i {
 	text-align: center;
 	align-items: center;
 	min-height: 100vh;
-	background: #adadad9a;
+	background: var(--greycolor);
 	overflow: hidden;
 }
 .isi{
