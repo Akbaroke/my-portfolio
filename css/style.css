@@ -1295,6 +1295,94 @@ textarea.input {
 }
 
 
+/* Alert form sucses */
+.alert{
+	position: absolute;
+	left: 130px;
+	bottom: 25px;
+	width: 215px;
+	height: 50px;
+	padding: 0.6rem 1.3rem;
+	background-color: var(--blackcolor);
+	border: 1px solid var(--blackcolor);
+	color: var(--greycolor);
+	line-height: 1.2;
+	border-radius: 10px;
+	outline: none;
+	transition: ease 0.5s all;
+	font-size: 12px;
+	margin: 0;
+	box-shadow: 1px 1px 5px var(--blackcolor);
+	display: none;
+}
+.destalert{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	border-radius: 50%;
+	text-align: center;
+	background-color: var(--greycolor);
+	color: var(--blackcolor);
+	position: absolute;
+	bottom: 29px;
+	left: 193px;
+	transition: 0.3s;
+}
+.destalert:hover{
+	transform: rotate(180deg);
+}
+
+
+/* Alert form Failed */
+.alert-failed1,
+.alert-failed2,
+.alert-failed3,
+.alert-failed4,
+.alert-failed5{
+	position: absolute;
+	left: 130px;
+	bottom: 25px;
+	width: 215px;
+	height: 50px;
+	padding: 0.6rem 1.3rem;
+	background-color: var(--blackcolor);
+	border: 1px solid var(--blackcolor);
+	color: var(--greycolor);
+	line-height: 1.2;
+	border-radius: 10px;
+	outline: none;
+	transition: ease 0.5s all;
+	font-size: 12px;
+	margin: 0;
+	box-shadow: 1px 1px 5px var(--blackcolor);
+	display: none;
+}
+.destalert1,
+.destalert2,
+.destalert3,
+.destalert4,
+.destalert5{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	border-radius: 50%;
+	text-align: center;
+	background-color: var(--greycolor);
+	color: var(--blackcolor);
+	position: absolute;
+	bottom: 29px;
+	left: 193px;
+	transition: 0.3s;
+}
+.destalert1:hover,
+.destalert2:hover,
+.destalert3:hover,
+.destalert4:hover,
+.destalert5:hover{
+	transform: rotate(180deg);
+}
+
+
 /* Scroll to top Button */
 .scroll-to-top{
 	width: 50px;
@@ -1442,4 +1530,58 @@ footer i {
 }
 .loading:nth-child(6){
 	animation-delay: 0.9s;
+}
+
+
+/* Animasi loading form */
+.loading-form{
+	position: absolute;
+	left: 34px;
+	bottom: 37px;
+	width: 85px;
+	height: 38px;
+	padding: 0.6rem 1.3rem;
+	background-color: transparent;
+	border: 2px solid var(--blackcolor);
+	color: var(--greycolor);
+	line-height: 1;
+	border-radius: 25px;
+	outline: none;
+	cursor: pointer;
+	transition: 0.3s;
+	margin: 0;
+	display: none;
+}
+.loadingcss {
+	position: relative;
+	margin: auto;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 4px solid var(--blackcolor);
+    border-top: 4px solid var(--greycolor);
+    border-bottom: 4px solid var(--greycolor);
+    -webkit-animation: .8s spin linear infinite;
+    animation: .8s spin linear infinite;
+}
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }

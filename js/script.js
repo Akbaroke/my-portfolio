@@ -149,3 +149,84 @@ window.addEventListener("load", function(){
 	loader.style.display = "none";
 	$('html').removeClass('hidden');
 })
+
+
+// Send Email to Google sheet
+const scriptURL = 'https://script.google.com/macros/s/AKfycbyTU2sjHjxpQ5odcoCJvdpvZejpCG2gscKL6LJlY3hKIyzYcAAGGXmvFtB-Uk7gNKHP/exec';
+const form = document.forms['myportfolio-contact-form'];
+const btnsend = document.querySelector('.btn');
+const btnloading = document.querySelector('.loading-form');
+const myalert = document.querySelector('.alert');
+const alertfailed1 = document.querySelector('.alert-failed1');
+const alertfailed2 = document.querySelector('.alert-failed2');
+const alertfailed3 = document.querySelector('.alert-failed3');
+const alertfailed4 = document.querySelector('.alert-failed4');
+const alertfailed5 = document.querySelector('.alert-failed5');
+
+form.addEventListener('submit', e => {
+	e.preventDefault()
+	myalert.style.display = "none";
+	alertfailed1.style.display = "none";
+	alertfailed2.style.display = "none";
+	alertfailed3.style.display = "none";
+	alertfailed4.style.display = "none";
+	alertfailed5.style.display = "none";
+	let Xname = document.forms['myportfolio-contact-form']['name'].value;
+	let Xemail = document.forms['myportfolio-contact-form']['email'].value;
+	let Xphone = document.forms['myportfolio-contact-form']['phone'].value;
+	let Xmessage = document.forms['myportfolio-contact-form']['message'].value;
+	if (Xname == ''){
+		alertfailed1.style.display = "block";
+		return false;
+	} else if ( Xemail == ''){
+		alertfailed2.style.display = "block";
+		return false;
+	} else if ( Xphone == ''){
+		alertfailed3.style.display = "block";
+		return false;
+	} else if ( Xmessage == ''){
+		alertfailed4.style.display = "block";
+		return false;
+	} else{
+		btnsend.style.visibility = "hidden";
+		btnloading.style.display = "block";
+		fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => {
+			btnsend.style.visibility = "visible";
+			btnloading.style.display = "none";
+			myalert.style.display = "block";
+			form.reset();
+			$(".input-container").removeClass('focus');
+			console.log('Success!', response);
+		})
+		.catch(error => {
+			alertfailed5.style.display = "block";
+			console.error('Error!', error.message);
+		})
+	}
+})
+
+const destalert = document.querySelector('.destalert');
+const destalert1 = document.querySelector('.destalert1');
+const destalert2 = document.querySelector('.destalert2');
+const destalert3 = document.querySelector('.destalert3');
+const destalert4 = document.querySelector('.destalert4');
+const destalert5 = document.querySelector('.destalert5');
+destalert.addEventListener("click", function(){
+	myalert.style.display = "none";
+})
+destalert1.addEventListener("click", function(){
+	alertfailed1.style.display = "none";
+})
+destalert2.addEventListener("click", function(){
+	alertfailed2.style.display = "none";
+})
+destalert3.addEventListener("click", function(){
+	alertfailed3.style.display = "none";
+})
+destalert4.addEventListener("click", function(){
+	alertfailed4.style.display = "none";
+})
+destalert5.addEventListener("click", function(){
+	alertfailed5.style.display = "none";
+})
